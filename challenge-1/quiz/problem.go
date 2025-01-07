@@ -1,8 +1,14 @@
 package quiz
 
+import "strings"
+
 type problem struct {
 	question string
 	answer   string
+}
+
+func (p problem) isValidAnswer(answer string) bool {
+	return strings.EqualFold(strings.TrimSpace(p.answer), strings.TrimSpace(answer))
 }
 
 func createProblems(data [][]string) []problem {
