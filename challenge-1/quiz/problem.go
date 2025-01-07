@@ -11,7 +11,7 @@ func (p problem) isValidAnswer(answer string) bool {
 	return strings.EqualFold(strings.TrimSpace(p.answer), strings.TrimSpace(answer))
 }
 
-func createProblems(data [][]string) []problem {
+func toProblems(data [][]string) []problem {
 	problems := make([]problem, len(data))
 	for i, d := range data {
 		problems[i] = problem{question: d[0], answer: d[1]}

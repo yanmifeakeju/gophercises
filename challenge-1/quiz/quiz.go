@@ -21,7 +21,7 @@ func New(source io.Reader) *Quiz {
 		log.Fatal(err)
 	}
 
-	problems := createProblems(data)
+	problems := toProblems(data)
 	return &Quiz{problems: problems}
 }
 

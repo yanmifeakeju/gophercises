@@ -2,13 +2,13 @@ package quiz
 
 import "testing"
 
-func TestCreateProblemsFromValidData(t *testing.T) {
+func TestToProblemsFromValidData(t *testing.T) {
 	data := [][]string{
 		{"What is 2+2?", "4"},
 		{"Capital of France?", "Paris"},
 	}
 
-	problems := createProblems(data)
+	problems := toProblems(data)
 
 	if len(problems) != 2 {
 		t.Errorf("Expected 2 problems, got %d", len(problems))
@@ -23,10 +23,10 @@ func TestCreateProblemsFromValidData(t *testing.T) {
 	}
 }
 
-func TestCreateProblemsWithNilInput(t *testing.T) {
+func TestToProblemsWithNilInput(t *testing.T) {
 	var data [][]string = nil
 
-	problems := createProblems(data)
+	problems := toProblems(data)
 
 	if len(problems) != 0 {
 		t.Errorf("Expected empty problems array for nil input, got length %d", len(problems))
