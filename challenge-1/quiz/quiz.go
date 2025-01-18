@@ -31,7 +31,7 @@ func (q *Quiz) Start(input io.Reader) {
 	for i := 0; i < len(q.problems); i++ {
 		reader := bufio.NewReader(input)
 		problem := q.problems[i]
-		fmt.Printf("# Problem %d: %s\n", i+1, problem.question)
+		fmt.Printf("Problem #%d: %s\n", i+1, problem.question)
 
 		answer, err := reader.ReadString('\n')
 		if err != nil {
